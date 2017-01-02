@@ -8,4 +8,5 @@ class Blog(ndb.Model):
     slug = ndb.StringProperty(required=True)
     content = ndb.TextProperty(required=True)
     posted = ndb.DateTimeProperty(auto_now_add=True)
+    author = ndb.StringProperty(required=True)
 

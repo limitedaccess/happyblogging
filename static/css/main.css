@@ -1,0 +1,9 @@
+.border-separator {
+    border-bottom:  #adadad 1px solid;
+    margin: 10px 0;
+}
+
+.blog-container {
+    border-bottom:  #adadad 1px solid;
+    padding: 10px;
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12"> 
+        <a class="btn btn-default" href="{% url 'home' %}">Back to list</a>
+        </div>
+    </div>
+    <div class="border-separator col-md-12"></div>
+    <div class='row'>
+        <div class="col-sm-12">
+            <div class="col-sm-offset-2 col-sm-8">
+
+                <p><strong>{{ blog.title }}</strong>
+                <p><em>posted at [{{blog.posted | date:"DATETIME_FORMAT"}}]</em></p>
+                {{ blog.content|safe }}
+               
+            </div>
+        </div>
+    </div>
+{% endblock %}

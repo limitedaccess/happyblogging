@@ -1,5 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {{ content }}
+        <div class="row">
+            <div class="col-md-12"> 
+            <a class="btn btn-default" href='{% url "create_blog" %}'>New Blog</a>
+            </div>
+        </div>
+        <div class="border-separator col-md-12"></div>
+        {% for blog in blogs %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="center-block blog-container jumbotron">        
+                    <p><em>posted at [{{blog.posted | date:"SHORT_DATETIME_FORMAT"}}] by {{blog.author}}</em></p>
+                    <a href='{% url "blog_details" blog.key.id %}'><span>{{blog.title}}</span></a> 
+                </div>
+            </div>
+        </div>
+        {% endfor %}
 {% endblock %}

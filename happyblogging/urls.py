@@ -17,10 +17,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from blog.views import HomeView
+from blog.views import HomeView, CreateBlogView, DetailView 
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^blog/create', CreateBlogView.as_view(), name='create_blog'),
+    url(r'^blog/(?P<id>\w{0,256})/$', DetailView.as_view(), name='blog_details'),
 
     # admin
     url(r'^admin/', admin.site.urls),

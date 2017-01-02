@@ -7,6 +7,7 @@ handlers:
   static_dir: static/
 - url: .*
   script: happyblogging.wsgi.application
+  login: required
 
 # Only pure Python libraries can be vendored
 # Python libraries that use C extensions can
