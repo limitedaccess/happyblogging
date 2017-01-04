@@ -9,3 +9,7 @@
 
 ## Running unit test
 `nosetests --with-gae blog`
+or we can just run
+`python runner.py ~/google-cloud-sdk` 
+or 
+`python blog/tests.py`

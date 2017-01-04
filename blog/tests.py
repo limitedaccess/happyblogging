@@ -2,6 +2,15 @@
 import unittest
 from webtest import TestApp
 
+# 
+# uncomment to run unit test by 'python blog/tests.py'
+# otherwise use runner file to run the unit test
+#
+# [Start Path fix]
+import dev_appserver
+dev_appserver.fix_sys_path()
+# [End Path fix]
+
 from google.appengine.ext import ndb
 from google.appengine.ext import testbed
 
@@ -61,5 +70,9 @@ class BlogViewTestCase(unittest.TestCase):
         blog.put()
         result = self.testapp.get('/blog/' + str(blog.key.id()) +'/')
         self.assertIn("test-title2", result.body)
+
+
+if __name__ == '__main__':
+	unittest.main()
         
     
